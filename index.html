@@ -11,43 +11,97 @@
 body{
 margin:0;
 font-family:Arial,sans-serif;
-background:#f5f5f5;
+background:#f0f2f5;
+color:#222;
 }
 
 header{
 background:#0e2f66;
 color:white;
-padding:40px;
+padding:50px 20px;
 text-align:center;
+}
+
+header h1{
+margin:0;
+font-size:52px;
+}
+
+header p{
+margin-top:15px;
+font-size:22px;
 }
 
 nav{
 background:white;
-padding:15px;
+padding:18px;
 text-align:center;
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
 }
 
 nav a{
-margin:0 15px;
+margin:0 18px;
 text-decoration:none;
 color:#0e2f66;
 font-weight:bold;
+font-size:18px;
 }
 
 main{
-padding:40px;
-max-width:1000px;
-margin:30px auto;
+max-width:1100px;
+margin:40px auto;
+padding:0 20px;
+}
+
+.hero{
 background:white;
-border-radius:10px;
-box-shadow:0 0 15px rgba(0,0,0,0.1);
+padding:60px;
+border-radius:12px;
+box-shadow:0 0 20px rgba(0,0,0,0.08);
+text-align:center;
+margin-bottom:30px;
+}
+
+.hero h2{
+font-size:42px;
+margin-top:0;
+color:#0e2f66;
+}
+
+.hero p{
+font-size:22px;
+margin:20px 0 30px;
+}
+
+.button{
+display:inline-block;
+background:#0e2f66;
+color:white;
+padding:14px 30px;
+border-radius:6px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.card{
+background:white;
+padding:35px;
+border-radius:12px;
+box-shadow:0 0 15px rgba(0,0,0,0.08);
+margin-bottom:25px;
+}
+
+.card h2{
+margin-top:0;
+color:#0e2f66;
 }
 
 footer{
 background:#0e2f66;
 color:white;
 text-align:center;
-padding:20px;
+padding:25px;
+margin-top:40px;
 }
 
 </style>
@@ -70,13 +124,28 @@ padding:20px;
 
 <main>
 
+<div class="hero">
+<h2>Вместе строим будущее</h2>
+
+<p>
+Ответственность. Развитие. Справедливость.
+</p>
+
+<a class="button" href="#">
+Наша программа
+</a>
+</div>
+
+<div class="card">
 <h2>Добро пожаловать</h2>
 
 <p>
 Официальный сайт политической партии
 «ОТЕЧЕСТВЕННЫЙ ВЫБОР».
 </p>
+</div>
 
+<div class="card">
 <h2>Наши цели</h2>
 
 <ul>
@@ -85,20 +154,21 @@ padding:20px;
 <li>Укрепление законности и порядка.</li>
 <li>Создание возможностей для молодёжи.</li>
 </ul>
+</div>
 
+<div class="card">
 <h2>Обращение председателя</h2>
 
 <p>
 Мы стремимся к построению сильного и справедливого общества,
 основанного на ответственности, уважении к гражданам и развитии страны.
 </p>
+</div>
 
 </main>
 
 <footer>
-
 © 2026 Партия «Отечественный выбор»
-
 </footer>
 
 </body>
