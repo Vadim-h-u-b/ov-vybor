@@ -4,9 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ОТЕЧЕСТВЕННЫЙ ВЫБОР</title>
+<title>Отечественный выбор</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 
 <style>
+
+:root{
+--bg:#07142d;
+--card:#0d1f45;
+--blue:#2d6df6;
+--gold:#d4af37;
+--text:#e5e7eb;
+--gray:#9ca3af;
+}
 
 *{
 margin:0;
@@ -15,175 +26,260 @@ box-sizing:border-box;
 }
 
 body{
-font-family:Arial, sans-serif;
-background:#f4f6f9;
-color:#222;
-line-height:1.6;
+font-family:'Manrope',sans-serif;
+background:var(--bg);
+color:var(--text);
+}
+
+.container{
+width:90%;
+max-width:1300px;
+margin:auto;
 }
 
 header{
-background:#0d2f6f;
-color:white;
+position:sticky;
+top:0;
+z-index:100;
+background:rgba(7,20,45,.95);
+backdrop-filter:blur(10px);
+border-bottom:1px solid rgba(255,255,255,.08);
 }
 
-.topbar{
-max-width:1200px;
-margin:auto;
-padding:20px;
+.navbar{
 display:flex;
 justify-content:space-between;
 align-items:center;
+padding:20px 0;
 }
 
 .logo{
-font-size:28px;
-font-weight:bold;
+font-size:32px;
+font-weight:800;
+color:white;
+}
+
+.logo span{
+color:var(--gold);
+}
+
+nav{
+display:flex;
+gap:30px;
 }
 
 nav a{
-color:white;
+color:var(--gray);
 text-decoration:none;
-margin-left:25px;
-font-weight:bold;
-transition:0.3s;
+font-weight:600;
+transition:.3s;
 }
 
 nav a:hover{
-opacity:0.7;
+color:white;
 }
 
 .hero{
-background:linear-gradient(rgba(13,47,111,0.85), rgba(13,47,111,0.85)),
-url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1600&q=80');
-background-size:cover;
-background-position:center;
-color:white;
-text-align:center;
-padding:120px 20px;
+padding:100px 0;
+}
+
+.hero-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
 }
 
 .hero h1{
-font-size:60px;
+font-size:72px;
+font-weight:800;
+line-height:1;
 margin-bottom:20px;
 }
 
 .hero p{
 font-size:24px;
-margin-bottom:30px;
+color:var(--gray);
+margin-bottom:35px;
 }
 
-.button{
-display:inline-block;
-background:white;
-color:#0d2f6f;
-padding:15px 35px;
+.buttons{
+display:flex;
+gap:15px;
+}
+
+.btn{
+padding:16px 30px;
+border-radius:14px;
+font-weight:700;
 text-decoration:none;
-font-weight:bold;
-border-radius:6px;
-transition:0.3s;
+transition:.3s;
 }
 
-.button:hover{
+.btn-primary{
+background:var(--blue);
+color:white;
+}
+
+.btn-primary:hover{
 transform:translateY(-3px);
 }
 
-.container{
-max-width:1200px;
-margin:auto;
-padding:50px 20px;
+.btn-outline{
+border:2px solid var(--blue);
+color:white;
+}
+
+.btn-outline:hover{
+background:var(--blue);
+}
+
+.chairman-card{
+position:relative;
+}
+
+.chairman-card img{
+width:100%;
+border-radius:24px;
+display:block;
+}
+
+.quote{
+margin-top:-60px;
+margin-left:40px;
+background:rgba(13,31,69,.95);
+padding:25px;
+border-radius:20px;
+max-width:85%;
+box-shadow:0 10px 40px rgba(0,0,0,.3);
+}
+
+.quote p{
+font-size:16px;
+line-height:1.8;
+color:#d9d9d9;
+}
+
+.section{
+padding:100px 0;
 }
 
 .section-title{
-font-size:36px;
-color:#0d2f6f;
-margin-bottom:25px;
 text-align:center;
+font-size:48px;
+font-weight:800;
+margin-bottom:60px;
 }
 
 .cards{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
 }
 
 .card{
-background:white;
-padding:25px;
-border-radius:12px;
-box-shadow:0 5px 15px rgba(0,0,0,0.08);
-transition:0.3s;
+background:var(--card);
+padding:30px;
+border-radius:20px;
+transition:.3s;
+border:1px solid rgba(255,255,255,.05);
 }
 
 .card:hover{
-transform:translateY(-5px);
+transform:translateY(-8px);
+box-shadow:0 15px 40px rgba(45,109,246,.2);
 }
 
 .card h3{
-color:#0d2f6f;
 margin-bottom:15px;
+font-size:22px;
 }
 
-.message{
-background:white;
-padding:35px;
-border-radius:12px;
-box-shadow:0 5px 15px rgba(0,0,0,0.08);
-margin-top:20px;
+.card p{
+color:var(--gray);
+line-height:1.7;
 }
 
-.news{
+.navigation-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:20px;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
 }
 
-.news-item{
-background:white;
-padding:25px;
-border-radius:12px;
-box-shadow:0 5px 15px rgba(0,0,0,0.08);
-transition:0.3s;
+.nav-card{
+background:var(--card);
+padding:35px;
+border-radius:20px;
+text-decoration:none;
+color:white;
+transition:.3s;
 }
 
-.news-item:hover{
-transform:translateY(-5px);
+.nav-card:hover{
+transform:translateY(-8px);
+border-color:var(--gold);
+box-shadow:0 0 30px rgba(212,175,55,.15);
 }
 
-.news-date{
-color:#777;
-font-size:14px;
+.nav-card h3{
 margin-bottom:10px;
 }
 
+.nav-card p{
+color:var(--gray);
+}
+
 footer{
-background:#0d2f6f;
-color:white;
+margin-top:100px;
+background:#051022;
+padding:60px 0;
+border-top:1px solid rgba(255,255,255,.08);
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+}
+
+.footer-title{
+color:var(--gold);
+margin-bottom:20px;
+font-size:20px;
+font-weight:700;
+}
+
+.footer-text{
+color:var(--gray);
+line-height:2;
+}
+
+.copyright{
+margin-top:40px;
 text-align:center;
-padding:30px;
-margin-top:50px;
+color:#6b7280;
 }
 
-@media(max-width:768px){
+@media(max-width:900px){
 
-.topbar{
-flex-direction:column;
+.hero-grid{
+grid-template-columns:1fr;
 }
 
-nav{
-margin-top:15px;
+.cards{
+grid-template-columns:1fr;
 }
 
-nav a{
-display:block;
-margin:10px 0;
+.navigation-grid{
+grid-template-columns:1fr;
 }
 
 .hero h1{
-font-size:38px;
+font-size:48px;
 }
 
-.hero p{
-font-size:18px;
+.footer-grid{
+grid-template-columns:1fr;
 }
 
 }
@@ -195,17 +291,16 @@ font-size:18px;
 
 <header>
 
-<div class="topbar">
+<div class="container navbar">
 
 <div class="logo">
-ОТЕЧЕСТВЕННЫЙ ВЫБОР
+ОТЕЧЕСТВЕННЫЙ <span>ВЫБОР</span>
 </div>
 
 <nav>
-<a href="index.html">Главная</a>
+<a href="#">Главная</a>
 <a href="about.html">О партии</a>
 <a href="program.html">Программа</a>
-<a href="news.html">Новости</a>
 <a href="contacts.html">Контакты</a>
 </nav>
 
@@ -215,112 +310,124 @@ font-size:18px;
 
 <section class="hero">
 
+<div class="container">
+
+<div class="hero-grid">
+
+<div>
+
 <h1>ОТЕЧЕСТВЕННЫЙ ВЫБОР</h1>
 
 <p>Порядок. Справедливость. Выбор.</p>
 
-<a href="program.html" class="button">
-Изучить программу
+<div class="buttons">
+
+<a href="#" class="btn btn-primary">
+Присоединиться
 </a>
 
-</section>
+<a href="program.html" class="btn btn-outline">
+Программа
+</a>
 
-<section class="container">
+</div>
 
-<h2 class="section-title">
-Добро пожаловать
-</h2>
+</div>
 
-<div class="message">
+<div class="chairman-card">
 
+<img src="chairman.jpg" alt="Председатель">
+
+<div class="quote">
 <p>
-Официальный сайт политической партии
-«ОТЕЧЕСТВЕННЫЙ ВЫБОР».
+Мы выбираем сильную власть, которая отвечает за свои решения.
+Мы выбираем справедливый закон, который защищает каждого.
+Мы строим систему, где порядок даёт свободу, экономика работает на людей,
+а власть прозрачна и подконтрольна народу.
+Мы не ждём перемен — мы создаём их сами.
 </p>
+</div>
 
-<p style="margin-top:15px;">
-На сайте публикуются новости партии,
-программные документы, официальные заявления
-и информация о деятельности партии.
-</p>
+</div>
+
+</div>
 
 </div>
 
 </section>
 
-<section class="container">
+<section class="section">
 
-<h2 class="section-title">
-Наши приоритеты
-</h2>
+<div class="container">
+
+<h2 class="section-title">Основные направления</h2>
 
 <div class="cards">
 
 <div class="card">
-<h3>Развитие общества</h3>
-<p>Создание условий для устойчивого развития государства и общества.</p>
+<h3>Государство</h3>
+<p>Сильные институты власти и ответственность перед гражданами.</p>
 </div>
 
 <div class="card">
-<h3>Поддержка граждан</h3>
-<p>Защита интересов граждан и укрепление социальной стабильности.</p>
+<h3>Закон и порядок</h3>
+<p>Справедливое законодательство и защита прав граждан.</p>
 </div>
 
 <div class="card">
-<h3>Законность</h3>
-<p>Укрепление правопорядка и уважения к закону.</p>
+<h3>Семья</h3>
+<p>Поддержка семей, демографии и качества жизни населения.</p>
 </div>
 
 <div class="card">
-<h3>Молодёжь</h3>
-<p>Поддержка инициатив и возможностей для молодого поколения.</p>
+<h3>Экономика</h3>
+<p>Развитие производства, предпринимательства и рабочих мест.</p>
+</div>
+
 </div>
 
 </div>
 
 </section>
 
-<section class="container">
+<section class="section">
 
-<h2 class="section-title">
-Обращение председателя
-</h2>
+<div class="container">
 
-<div class="message">
+<h2 class="section-title">Ключевые разделы</h2>
 
-<p>
-Мы стремимся к построению сильного, справедливого и современного общества,
-основанного на ответственности, уважении к гражданам и развитии страны.
-</p>
+<div class="navigation-grid">
 
-</div>
+<a href="ustav.html" class="nav-card">
+<h3>Устав</h3>
+<p>Основной документ партии.</p>
+</a>
 
-</section>
+<a href="program.html" class="nav-card">
+<h3>Программа</h3>
+<p>Цели и направления развития.</p>
+</a>
 
-<section class="container">
+<a href="sostav.html" class="nav-card">
+<h3>Состав</h3>
+<p>Руководящие органы партии.</p>
+</a>
 
-<h2 class="section-title">
-Последние новости
-</h2>
+<a href="simvolika.html" class="nav-card">
+<h3>Символика</h3>
+<p>Флаг, эмблема и атрибутика.</p>
+</a>
 
-<div class="news">
+<a href="press.html" class="nav-card">
+<h3>Пресс-центр</h3>
+<p>Заявления и публикации.</p>
+</a>
 
-<div class="news-item">
-<div class="news-date">15 мая 2026</div>
-<h3>Учредительный съезд партии</h3>
-<p>Принят Устав партии и определены основные направления деятельности.</p>
-</div>
+<a href="docs.html" class="nav-card">
+<h3>Документооборот</h3>
+<p>Официальные документы партии.</p>
+</a>
 
-<div class="news-item">
-<div class="news-date">20 мая 2026</div>
-<h3>Начало работы официального сайта</h3>
-<p>Запущен официальный информационный ресурс партии.</p>
-</div>
-
-<div class="news-item">
-<div class="news-date">25 мая 2026</div>
-<h3>Подготовка программных инициатив</h3>
-<p>Продолжается работа над развитием программных предложений партии.</p>
 </div>
 
 </div>
@@ -329,9 +436,46 @@ font-size:18px;
 
 <footer>
 
-<p>© 2026 Политическая партия «ОТЕЧЕСТВЕННЫЙ ВЫБОР»</p>
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+
+<div class="footer-title">
+Контакты председателя
+</div>
+
+<div class="footer-text">
+Телефон: будет добавлен<br>
+Спецсвязь: будет добавлена
+</div>
+
+</div>
+
+<div>
+
+<div class="footer-title">
+Контакты партии
+</div>
+
+<div class="footer-text">
+Спецсвязь партии: будет добавлена<br>
+Электронная почта: будет добавлена
+</div>
+
+</div>
+
+</div>
+
+<div class="copyright">
+© 2026 Политическая партия «Отечественный выбор»
+</div>
+
+</div>
 
 </footer>
 
 </body>
 </html>
+```
